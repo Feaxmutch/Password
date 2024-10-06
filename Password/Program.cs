@@ -8,7 +8,7 @@
             string password = "123word";
             string message = "Пончик";
 
-            for (int i = attemps ; i > 0;)
+            for (int i = attemps ; i > 0; i--)
             {
                 Console.Clear();
 
@@ -19,15 +19,14 @@
                 if (userInput == password)
                 {
                     Console.WriteLine(message);
-                    i = attemps;
+                    Console.ReadKey();
+                    break;
                 }
                 else
                 {
                     Console.WriteLine($"Неверный пароль.");
-                    i--;
+                    Console.ReadKey();
                 }
-
-                Console.ReadKey();
             }
         }
     }
