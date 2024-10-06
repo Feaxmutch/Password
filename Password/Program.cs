@@ -8,25 +8,26 @@
             string password = "123word";
             string message = "Пончик";
 
-            for (; attemps > 0; attemps--)
+            for (int i = attemps ; i > 0;)
             {
                 Console.Clear();
 
-                Console.WriteLine($"Осталось {attemps} попыток");
+                Console.WriteLine($"Осталось {i} попыток");
                 Console.Write("Введите пароль: ");
                 string userInput = Console.ReadLine();
 
                 if (userInput == password)
                 {
                     Console.WriteLine(message);
-                    Console.ReadKey();
-                    break;
+                    i = attemps;
                 }
                 else
                 {
                     Console.WriteLine($"Неверный пароль.");
-                    Console.ReadKey();
+                    i--;
                 }
+
+                Console.ReadKey();
             }
         }
     }
